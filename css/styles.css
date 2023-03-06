@@ -1,4 +1,20 @@
-body {
-    background-color: black;
-    color: white;
+article.task.done {
+    text-decoration: line-through;
+    color: lightgrey;
+}
+
+article.task.done span {
+    text-decoration: none;
+}
+
+article.task.important {
+    font-weight: 700;
+}
+
+article.task span {
+    font-size: 0.7em;
+}
+
+article.task.hide {
+    display: none;
 }

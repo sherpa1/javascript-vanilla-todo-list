@@ -6,22 +6,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Planets</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css">
+    <title>Todo List</title>
 </head>
 
 <body>
-    <h1>Planets</h1>
-    <form id="search-form" name="search-form">
-        <label>Mot clé</label>
-        <input type="text" name="keyword" id="keyword">
-        <input type="submit" value="Chercher">
-    </form>
-    <div>
-        <button id="test">Test</button>
-    </div>
-    <div id="search-results">
+    <h1>Todo List</h1>
 
-    </div>
+    <main class="container">
+        <section>
+            <h2>Ajouter une nouvelle tâche</h2>
+            <form id="add_task_form" name="add_task_form">
+                <fieldset>
+                    <label>Contenu</label>
+                    <input type="text" name="task_content" id="task_content" placeholder="Contenu">
+                    <input type="submit" value="Ajouter">
+                </fieldset>
+            </form>
+        </section>
+        <section>
+            <h2>Tâches à accomplir</h2>
+            <div id="tasks_container">
+
+            </div>
+        </section>
+    </main>
+
     <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 
