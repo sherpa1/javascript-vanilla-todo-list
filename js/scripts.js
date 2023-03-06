@@ -22,22 +22,30 @@ const tasks = [
     new Task("Acheter cadeau pour anniversaire de Jean", true)
 ];
 
-function onClick(event) {
-    console.log(event);
-}
-
 function onSubmit(event) {
-    event.preventDefault();//évite le rechargement de page
+    event.preventDefault();//évite le rechargement de page après la validation du formulaire
+
+
+
+    const important = document.querySelector("#task_important").checked;
+    //récupère la valeur de la checkbox
+
+
     const content = document.querySelector('#task_content').value;
+    //récupère la valeur de l'input
+
+    document.querySelector('#task_content').value = "";
+    //vide le champ de texte
 
     if (content === "") {
         alert("Vous devez saisir un contenu");
         return;
     }
 
-    const task = new Task(content);
+    const task = new Task(content, false, important);
 
     tasks.unshift(task);
+    //ajoute la nouvelle tâche en 1ère position de la liste
 
     refresh_tasks();
 }

@@ -13,27 +13,44 @@
 </head>
 
 <body>
-    <h1>Todo List</h1>
+    <div class="container">
 
-    <main class="container">
-        <section>
-            <h2>Ajouter une nouvelle tâche</h2>
-            <form id="add_task_form" name="add_task_form">
-                <fieldset>
-                    <label>Contenu</label>
-                    <input type="text" name="task_content" id="task_content" placeholder="Contenu">
-                    <input type="submit" value="Ajouter">
-                </fieldset>
-            </form>
-        </section>
-        <section>
-            <h2>Tâches à accomplir</h2>
-            <div id="tasks_container">
 
-            </div>
-        </section>
-    </main>
+        <header>
+            <h1>Todo List</h1>
+        </header>
 
+        <main>
+            <section>
+                <h2>Ajouter une nouvelle tâche</h2>
+                <form id="add_task_form" name="add_task_form">
+                    <fieldset>
+                        <div>
+                            <label>Contenu</label>
+                            <input type="text" name="task_content" id="task_content" placeholder="Contenu">
+                        </div>
+                        <div>
+                            <label>Important ?</label>
+                            <input type="checkbox" name="task_important" id="task_important">
+                        </div>
+                        <input type="submit" value="Ajouter">
+                    </fieldset>
+                </form>
+            </section>
+            <section>
+                <h2>Tâches à accomplir</h2>
+                <div id="tasks_container">
+
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            2023 - Alexandre Leroux - Enseignant / Formateur à Nancy (<a href="https://sherpa.one"
+                title="sherpa.one">sherpa.one</a>)
+        </footer>
+
+    </div>
     <script type="text/javascript" src="js/scripts.js"></script>
 </body>
 
