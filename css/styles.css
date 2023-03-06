@@ -7,14 +7,22 @@ article.task.done span {
     text-decoration: none;
 }
 
+article.task {
+    font-weight: 500;
+}
+
 article.task.important {
     font-weight: 700;
 }
 
-article.task span {
+article.task .date {
     font-size: 0.7em;
 }
 
-article.task.hide {
-    display: none;
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 48
 }

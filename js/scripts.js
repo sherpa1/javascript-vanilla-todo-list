@@ -1,7 +1,6 @@
 //écoute de l'événement "DOMContentLoaded" et exécution de la fonction init lorsque le DOM de la page HTML est chargé.
 document.addEventListener("DOMContentLoaded", init);
 
-//créé une classe Task
 class Task {
     constructor(content, done = false, important = false) {
         this.content = content;
@@ -82,7 +81,7 @@ function refresh_tasks() {
                 task.className = task.className.replace("todo", "done");
 
                 //remplace le texte du bouton de V à x
-                task.querySelector("button").innerText = "x";
+                task.querySelector("button").innerHTML = get_icon_according_done(true);
             } else {
                 //supprime la balise article du DOM
                 document.querySelector("#tasks_container").removeChild(task);
@@ -110,9 +109,9 @@ function format_date(date) {
     return dd + '/' + mm + '/' + yyyy;
 }
 
-function get_label_according_done(done) {
+function get_icon_according_done(done) {
     //retourne "x" ou "V" selon la valeur de done (true / false)
-    return done ? "x" : "V";
+    return done ? `<span class="material-symbols-outlined">close</span>` : `<span class="material-symbols-outlined">done</span>`;
 }
 
 function get_dataStatus_according_done(done) {
@@ -129,14 +128,14 @@ function task_template(task) {
     "
     data-status="${get_dataStatus_according_done(task.done)}"
     >
-        ${task.content}
+        <span contenteditable="true">${task.content}</span>
 
-        <span>
+        <span class="date">
         (${format_date(task.created_at)})
         </span>
         
         <button class="button button-clear"> 
-        ${get_label_according_done(task.done)}
+        ${get_icon_according_done(task.done)}
         </button>
     
     </article>`;
