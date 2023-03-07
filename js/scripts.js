@@ -24,8 +24,6 @@ const tasks = [
 function onSubmit(event) {
     event.preventDefault();//évite le rechargement de page après la validation du formulaire
 
-
-
     const important = document.querySelector("#task_important").checked;
     //récupère la valeur de la checkbox
 
@@ -141,6 +139,23 @@ function task_template(task) {
     </article>`;
 }
 
+function filter() {
+    const show_done = document.querySelector("#filter");
+
+    if (show_done.dataset.filter === "all") {
+        show_done.dataset.filter = "done-only";
+        show_done.innerText = "Afficher les tâches accomplies";
+        const tasks_to_hide = document.querySelectorAll("article.task");
+        tasks_to_hide.forEach(task => task.classList.remove("hide"));
+    } else {
+        show_done.dataset.filter = "all";
+        show_done.innerText = "Tout Afficher";
+        const tasks_to_hide = document.querySelectorAll("article.task.done");
+        tasks_to_hide.forEach(task => task.classList.add("hide"));
+    }
+
+}
+
 function init() {
     //initialise le script
     console.log('init');
@@ -152,4 +167,8 @@ function init() {
 
     add_task_form.addEventListener('submit', onSubmit);
     //ajoute un écouteur sur l'événement submit du formulaire add_task_form
+
+    const show_done = document.querySelector("#filter");
+
+    show_done.addEventListener("click", filter);
 }
